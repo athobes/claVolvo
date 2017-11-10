@@ -1,0 +1,25 @@
+page-login 
+{
+    ion-content {background-color:#000000 !important;}
+    
+    #form-login ion-item {padding:0px 25px; margin-bottom:5px; color:#ffffff; background-color:transparent;}
+    #form-login ion-item.item-block .item-inner {padding-right:0px; border-bottom:0px;}
+    #form-login ion-item .item-inner {box-shadow:none !important;}
+    
+    #form-login ion-label {font-size:1.5rem; color:#a3a3a3;}
+    
+    #form-login .item-input ion-input {padding:0px 20px; border:2px solid #454545; -webkit-border-radius:30px; border-radius:30px;}
+    #form-login .item-input ion-input input {outline:none;}
+    #form-login ion-item.item-input-has-focus ion-input {border-color:#ffffff; outline:none;}
+    #form-login ion-item.item-input-has-focus .item-inner {box-shadow:none;}
+    
+    #form-login ion-item.item-toggle .item-inner {flex-direction:row-reverse; justify-content:center;}
+    #form-login ion-item.item-toggle .item-inner .input-wrapper {display:block; flex:initial; align-self:auto;}
+    #form-login ion-item.item-toggle .item-inner ion-label {padding-left:5px;}
+    #form-login ion-item ion-toggle {width:15px; height:15px; padding:2px 2px; border:1px solid #454545; -webkit-border-radius:50%; border-radius:50%;}
+    #form-login ion-item .toggle-icon {opacity:0;}
+    #form-login ion-item ion-toggle.toggle-checked .toggle-icon {background-color:#4dc1f4; opacity:1;}
+    #form-login ion-item .toggle-inner {width:15px; height:15px; top:0px; left:0px; opacity:0;}
+    #form-login ion-item.toggle-checked .toggle-inner {-webkit-transform:translate3d(0px, 0, 0); transform:translate3d(0px, 0, 0);}
+    #form-login button[ion-button] {width:65%; margin-bottom:40px;}
+}

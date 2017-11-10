@@ -1,0 +1,61 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Premiações</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content elastic-header>
+	<!-- Page Header -->
+	<div class="background-image" style="background-image:url(assets/images/VOLVO_app_tela_premiacoes.jpg)"></div>
+	<!-- End Page Header -->
+	
+	<!-- Content -->
+	<div class="content-full text-white" style="background-color:#000000;">
+		<p>
+			A cada trimestre uma recompensa diferente e especial para instigar sua bravura.
+		</p>
+		<p>
+			Em fevereiro de 2018, uma grande viagem internacional para os primeiros colocados do ranking!
+		</p>
+	</div>
+	<div class="main-content">
+		<div class="retreat" style="margin-top:-35px;">
+			<!-- Fases -->
+			<div *ngFor="let item of items">
+				<div class="box-gradient {{item.class}} item-expanded-{{item.expanded}}" (click)="expandItem(item)">
+					<button *ngIf="item.slides.length" detail-none><img src="assets/images/seta.png"></button>
+					<ion-grid>
+						<ion-row class="text-white">
+							<ion-col>
+								<h2>{{item.fase}}</h2>
+								<p>{{item.trimestre}}</p>
+							</ion-col>
+							<ion-col>
+								<h2 class="light right">{{item.status}}</h2>
+								<p class="right"><b>{{item.periodo}}</b></p>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</div>
+				<!-- slides -->
+				<expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+					<ion-slides class="slide-premiacoes" effect="coverflow">
+						<ion-slide *ngFor="let slide of item.slides">
+							<img class="slide-image" src="{{appUrl}}{{slide}}" />
+						</ion-slide>
+					</ion-slides>
+				</expandable>
+				<!-- end slides -->
+			</div>
+			<!-- End Fases -->
+		</div>
+	</div>
+	<!-- End Content  -->
+	
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+</ion-content>

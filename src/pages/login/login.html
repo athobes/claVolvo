@@ -1,0 +1,20 @@
+<ion-content>
+	<ion-img style="width:100%; height:auto;" src="assets/images/VOLVO_app_tela_login.jpg"></ion-img>
+	<p class="text-white center line-0 pad-top-10">
+		Entre com seu login e senha<br />
+		para acessar o conteúdo
+	</p>
+	<form id="form-login" (ngSubmit)="loginForm()" #registerForm="ngForm">
+		<ion-item>
+			<ion-input type="email" name="email" autocapitalize="off" placeholder="Email" [(ngModel)]="credentials.email" required></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-input type="password" name="password" autocapitalize="off" placeholder="Senha" [(ngModel)]="credentials.password" required></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-toggle #chk1 [checked]="toggle" (ionChange)="rememberToggle()"></ion-toggle>
+			<ion-label>Lembrar meus dados</ion-label>
+		</ion-item>
+		<button ion-button round type="submit" class="bg-gradient">ENTRAR</button>
+	</form>
+</ion-content>

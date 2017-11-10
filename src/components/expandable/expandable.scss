@@ -1,0 +1,4 @@
+expandable {
+    .expand-wrapper {transition: 0.2s linear; overflow:hidden;} 
+    .collapsed {max-height:0px !important;}
+}

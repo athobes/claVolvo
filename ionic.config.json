@@ -1,0 +1,8 @@
+{
+  "name": "appClaVolvo",
+  "app_id": "b9c04b31",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

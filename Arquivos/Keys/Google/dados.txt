@@ -1,0 +1,7 @@
+Key: jalan
+Senhas: hotmail
+
+Lembrando que o package também precisa ser o mesmo:
+br.com.jalan.clavolvo
+
+E o version code precisa ser maior do que o da versão que está no ar (1).

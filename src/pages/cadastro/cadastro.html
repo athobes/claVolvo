@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Meus dados</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content elastic-header>
+	<!-- Page Header -->
+	<div class="background-image" style="background-image:url(assets/images/VOLVO_app_tela_cadastro.jpg)"></div>
+	<!-- End Page Header -->
+	
+	<!-- Content -->
+	<div class="main-content">
+		<h2 class="page-title text-blue">
+			Utilize os campos abaixo para alterar sua senha de acesso.
+		</h2>
+		<b class="text-gray">Nome</b><br />
+		<p class="text-gray light">{{userName}}</p>
+		<b class="text-gray">E-mail</b>
+		<p class="text-gray light">{{userEmail}}</p>
+		<form id="form-passwd" (ngSubmit)="passdwForm()" #registerForm="ngForm">
+			<ion-item>
+				<ion-input type="password" name="old_password" autocapitalize="off" placeholder="Senha" [(ngModel)]="credentials.old_password" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="password" name="password" autocapitalize="off" placeholder="Repita a senha" [(ngModel)]="credentials.password" required></ion-input>
+			</ion-item>
+			<br />
+			<button ion-button type="submit" class="bg-gradient left">SALVAR</button>
+		</form>
+	</div>
+	<!-- End Content  -->
+</ion-content>

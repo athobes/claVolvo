@@ -1,0 +1,51 @@
+<ion-header class="ranking-header">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Ranking {{userTypeLabel}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<!-- Page Header -->
+	<div class="ranking-page-top" style="background-image:url(assets/images/VOLVO_app_tela_ranking.jpg)">
+		<p class="center small" style="color:#1767cf;">
+			CLIQUE PARA VER MAIS <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+		</p>
+		<ion-scroll scrollX="true" class="ranking-segments">
+			<div class="segment-item {{activeMethod==i?'active':''}}" *ngFor="let ranking of rankings; let i = index;">
+				<button (click)="loadRankingData(i)"></button>
+				<p [innerHTML]="ranking.label"></p>
+			</div>
+		</ion-scroll>
+		<div class="main-content text-white">
+			<p>
+				Confira sua posição no ranking e aprimore suas estratégias e batalha para 
+				garantir seu lugar entre os melhores do ano.
+			</p>
+		</div>
+	</div>
+	<!-- End Page Header -->
+	
+	<!-- Content -->
+	<div class="main-content ranking-content">
+		<ion-card class="retreat" style="margin-top:-20px;">
+			<ion-grid class="ranking-grid">
+				<ion-row *ngFor="let pos of ranking; let i = index">
+					<ion-col col-2 class="center">{{i+1}}</ion-col>
+					<ion-col col-8>{{pos.name}}</ion-col>
+					<ion-col col-2 class="right">{{pos.points}}</ion-col>
+				</ion-row>
+			</ion-grid>
+			<h2 class="center text-gray light" style="font-size:2rem; margin-bottom:40px;">ACESSE AGORA O</h2>
+		</ion-card>
+		<button ion-button round class="bg-gradient retreat" style="margin-top:-35px;" (click)="openFullRanking()">
+			RANKING COMPLETO
+		</button>
+	</div>
+	<!-- End Content  -->
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+</ion-content>

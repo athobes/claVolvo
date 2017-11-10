@@ -1,0 +1,5 @@
+ionic cordova build --release android
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /media/ARQUIVOS/00.SERVER/Mobile/Ionic/appClaVolvo/Arquivos/Keys/Google/jalan.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk jalan
+
+/home/athobes/Android/Sdk/build-tools/27.0.0/./zipalign -v 4 /media/ARQUIVOS/00.SERVER/Mobile/Ionic/appClaVolvo/platforms/android/build/outputs/apk/android-release-unsigned.apk br.com.jalan.clavolvo.apk
